@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200&display=swap" rel="stylesheet">
+        <link rel="icon" href="./image_michelle.jpg">
+        <title>Michelle</title>
+        <script src="./lib.js" defer></script>
+    </head>
+    <body onload="affiche()">
+        <script>
+            function affiche() {
+                let ziheisst = document.getElementById('ziheisst');
+                setTimeout(() => {
+                    ziheisst.classList.add('affiche');
+                }, 1210)
+            }
+
+            function playAudio() {
+                var audio = new Audio('https://cdn.discordapp.com/attachments/629576665533513741/900729432900243507/musique.mp3');
+                audio.play()
+            }
+        </script>
+        <header>
+            <div class="profil">
+                <img class="pp" src="./image_michelle.jpg">
+                <h1 class="michelle" href="https://app.mindmup.com/map/_free/2021/10/c1c2c03030c111ecb68dfd3cd2596c3d">Michelle</h1>
+            </div>
+            <div class="texte-intro">
+                <h2 data-typetext="Wir haben"></h2><h2 data-typetext="eine Frau enfragt." data-typedelay="430"></h2> <br><br> <h1 id="ziheisst" class="ziheisst">Sie heißt <span class="michelle" onclick="playAudio()">Michelle</span>.</h1>
+            </div>
+        </header> 
+        <!-- <div id="page_container"> -->
+            <ul id='list'>
+                <li class="pair"><i class="fas fa-birthday-cake"></i> <b>Alter:</b> Sie ist 68 Jahre alt.</li>
+                <li class="impair"><i class="fas fa-users"></i> <b>Familie: </b>Sie hat zwei Kinder. Sie heißen Julien und Matthieu. Und sie hat einen Ehemann,  Pierre.</li>
+                <li class="pair"><i class="fas fa-volleyball-ball"></i> <b>Hobbys: </b>Sie hat mehrere Hobis: kino, schlafen, essen, radfahren.</li>
+                <li class="impair"><i class="fas fa-city"></i> <b>Stadt: </b>Sie lebt in Pantin seit ihrer Kindheit.</li> 
+            </ul>
+            <p id="text">
+                <br>
+                Wir haben eine Frau befragt. <br>
+                Sie heißt Michelle. <br>
+                Sie ist 68 Jahre alt.<br>
+                Sie hat ein Ehemann: Pierre.<br>
+                Sie hat zwei Kinder, sie wohnen in Pantin. Sie heißen Julien und Matthieu.<br>
+                Julien ist 21 Jahre alt und Matthieu ist 16 Jahre alt. <br>
+                Michelle lebt seit ihrer Kindheit in Pantin und liebt diese Stadt.<br>
+                Sie geht oft in das Kino 104 und spaziert oft am Kanal entlang.
+            </p> 
+            <section class="slider-container"> 
+                <h3>Beliebte Orte</h3>
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://media.discordapp.net/attachments/629576665533513741/900737059914940456/Canal_de_l_Ourcq_a_Pantin_P1050514.png" alt="Kanal" title="Kanal" id="1"></div>
+                        <div class="slide"><img src="https://media.discordapp.net/attachments/629576665533513741/900737062372769873/cine_104.png" alt="Kino 104" title="Kino 104" id="2"></div>
+                        <div class="slide"><img src="https://media.discordapp.net/attachments/629576665533513741/900737058191069305/csm_Salle_Jacques_Brel__c__Fatima_Jellaoui_b91c9e8a47.png" alt="Salle Jacques Brel" title="Salle Jacques Brel" id="3"></div>
+                        <div class="slide"><img src="https://media.discordapp.net/attachments/629576665533513741/900737051262079036/biggs_album_00000001061.png" alt="Dynamo" title="Dynamo" id="4"></div>
+                        <div class="slide"><img src="https://media.discordapp.net/attachments/629576665533513741/900737055271813170/Groupe-des-20-theatres-membres-theatre-du-fil-de-leau.png" alt="Théâtre au fil de l'eau" title="Théâtre au fil de l'eau" id="5"></div>
+                    </div>
+                </div>
+            </section>
+        <!-- </div> -->
+        <style>
+            body::-webkit-scrollbar {
+                width: 12px; 
+                height: 12px; 
+            }
+            body::-webkit-scrollbar-track {
+                border-radius: 10px;
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+            body::-webkit-scrollbar-thumb {
+                background-color: #e78632;
+                background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,.3) 20%,transparent 20%,transparent 40%,rgba(255, 255, 255, 0.3) 40%,rgba(255,255,255,.3) 60%,transparent 60%,transparent 80%,rgba(255, 255, 255, 0.3) 80%);
+                border-radius: 10px;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #f0a146;
+            } 
+
+            h1.ziheisst {
+                font-family: 'Cormorant';
+                opacity: 0;
+                transition: all 1s ease-in-out;
+                clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+            }
+
+            h1.ziheisst.affiche {
+                opacity: 1;
+                clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+            }
+
+            .michelle {
+                display: inline-block;
+                color: white;
+                background: black;
+                border-radius: 5px;
+                padding: 5px;
+                font-family: sans-serif;
+                cursor: pointer;
+                user-select: none;
+                height: 20%; 
+            }
+            header {
+                background-color: #f89820;
+                height: 32vh;
+                display: flex;
+                flex-direction: center;
+                justify-content: center;
+                align-items: center;
+                /* gap: 10px;  */
+                overflow: hidden;
+                box-shadow: 0px 30px 50px #00000049;
+                position: sticky;
+                top: 0; 
+            }
+            header div.texte-intro h2 {
+                font-family: monospace;
+                font-weight: bolder;
+            }
+            header div.profil {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transform: translate(-20vw) rotate(-8deg);
+                cursor: pointer;
+                user-select: none;
+                background: #00000033;
+                width: 25vw;
+                border-radius: 20px;
+                padding: 10px;
+                transition: all .2s ease;
+            }
+            header div.profil:hover {
+                transform: translate(-20vw) rotate(0);
+                background: #00000069;
+            }
+            img.pp {
+                display: block;
+                border-radius: 50%;
+                height: 100px;
+                width: 100px;
+            }
+            #list {
+                list-style-type: none;
+                margin-top: 10vh;
+                margin-left: 1vw;
+                line-height: 2.5em;
+                font-family: 'Urbanist';
+            }
+            li {
+                font-size: 18pt;
+            }
+            li.pair {
+                color: #993232d7;
+            }
+            li.impair {
+                color: #bd5d5dd7; 
+            }
+            #text {
+                font-family: 'Urbanist';
+                font-size: 21pt;
+                text-align: center;
+            }
+
+            section.slider-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 3vh;
+            }
+            
+            section.slider-container > div.slider {
+                width: 525px; 
+                height: 291px; 
+                overflow-y: scroll;
+                overflow-x: hidden;
+                scroll-snap-type: y mandatory;
+            }
+
+            section.slider-container > div.slider::-webkit-scrollbar {
+                width: 2px;
+                height: 5px;
+            }
+            section.slider-container > div.slider::-webkit-scrollbar-track {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+            }
+            section.slider-container > div.slider::-webkit-scrollbar-thumb {
+                background-color: #11171a;
+                border-radius: 10px;
+            }
+            section.slider-container > div.slider > div {
+                margin: 0;
+                display: block;
+                scroll-snap-align: center;
+            }
+        </style> 
+    </body>
+</html>
