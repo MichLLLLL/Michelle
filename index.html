@@ -30,6 +30,19 @@
                     }, 3000)
                 }
             }
+
+            // let flecheH = document.getElementById("fleche-haut");
+            // let flecheB = document.getElementById('fleche-bas');
+            // let slider = document.querySelector(".slider");
+
+            // flecheB.addEventListener('click', () => {
+            //     slider.scroll({
+            //         top: 291,
+            //         left: 0,
+            //         behavior: 'smooth'
+            //     }) 
+            //     slider.scrollTo(291) 
+            // })
         </script>
         <header>
             <div class="profil">
@@ -58,9 +71,13 @@
                 Julien ist 21 Jahre alt und Matthieu ist 16 Jahre alt. <br>
                 Michelle lebt seit ihrer Kindheit in Pantin und liebt diese Stadt.<br>
                 Sie geht oft in das Kino 104 und spaziert oft am Kanal entlang.
-            </p> 
+            </p>
+            <h3 id='orte'>Beliebte Orte</h3>
             <section class="slider-container"> 
-                <h3 id='orte'>Beliebte Orte</h3>
+                <!-- <div class="fleches">
+                    <div class="fleche" id="fleche-haut"><i class="fas fa-arrow-circle-up"></i></div>
+                    <div class="fleche" id="fleche-bas"><i class="fas fa-arrow-circle-down"></i></div>
+                </div> -->
                 <div class="slider">
                     <div class="slides">
                         <div class="slide"><img src="https://media.discordapp.net/attachments/629576665533513741/900737059914940456/Canal_de_l_Ourcq_a_Pantin_P1050514.png" alt="Kanal" title="Kanal" id="1"></div>
@@ -140,6 +157,7 @@
                 font-weight: bolder;
             }
             header div.profil {
+                position: relative;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -151,10 +169,32 @@
                 border-radius: 20px;
                 padding: 10px;
                 transition: all .2s ease;
+                overflow: hidden;
+                box-shadow: -10px -20px 30px #00000050;
+            } 
+
+            header div.profil::after {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: -40%;
+                width: 15%;
+                background: #ffffff77;
+                height: 150%;
+                transform: skew(-30deg);
+                transition: all .2s ease-in-out;
+                z-index: 3;
             }
+
+            header div.profil:hover::after {
+                left: 140%;
+                transition: all .5s ease-in-out;
+            }
+
             header div.profil:hover {
-                transform: translate(-20vw) rotate(0);
+                transform: translate(-20vw) rotate(2deg) scale(0.8);
                 background: #da7904;
+                box-shadow: -5px -10px 5px #00000050;
             }
             img.pp {
                 display: block;
@@ -186,10 +226,11 @@
 
             section.slider-container {
                 display: flex;
-                flex-direction: column;
+                /* flex-direction: column; */
                 align-items: center;
                 justify-content: center;
                 margin-bottom: 3vh;
+                gap: 1vw;
             }
             
             section.slider-container > div.slider {
@@ -198,6 +239,12 @@
                 overflow-y: scroll;
                 overflow-x: hidden;
                 scroll-snap-type: y mandatory;
+                /* border-radius: 50px; */
+            }
+
+            section.slider-container > div.fleches > * {
+                font-size: 20pt;
+                cursor: pointer;
             }
 
             section.slider-container > div.slider::-webkit-scrollbar {
@@ -219,6 +266,8 @@
             }
             #orte {
                 font-size: 30px;
+                font-family: Arial;
+                text-align: center;
             }
         </style> 
     </body>
