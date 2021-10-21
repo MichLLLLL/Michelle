@@ -19,10 +19,16 @@
                     ziheisst.classList.add('affiche');
                 }, 1210)
             }
-
+            var playing = false
             function playAudio() {
                 var audio = new Audio('https://cdn.discordapp.com/attachments/629576665533513741/900729432900243507/musique.mp3');
-                audio.play()
+                if (!playing) {
+                    playing = true
+                    audio.play()
+                    setTimeout(() => {
+                        playing = false
+                    }, 3000)
+                }
             }
         </script>
         <header>
