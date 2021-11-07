@@ -39,11 +39,11 @@
                 if(img == -1) {
                     img=4
                     document.getElementById('tblImg').src=tblImg[img]
-                    document.getElementById('info').innerHTML=(img+1) + " • 5"
+                    document.getElementById('info').innerHTML=(img+1) + "•5"
                     return;
                 }
                 document.getElementById('tblImg').src=tblImg[img]
-                document.getElementById('info').innerHTML=(img+1) + " • 5"
+                document.getElementById('info').innerHTML=(img+1) + "•5"
                 return;
             }
 
@@ -52,11 +52,11 @@
                 if(img == 5) {
                     img=0
                     document.getElementById('tblImg').src=tblImg[img]
-                    document.getElementById('info').innerHTML=(img+1) + " • 5"
+                    document.getElementById('info').innerHTML=(img+1) + "•5"
                     return;
                 }
                 document.getElementById('tblImg').src=tblImg[img]
-                document.getElementById('info').innerHTML=(img+1) + " • 5"
+                document.getElementById('info').innerHTML=(img+1) + "•5"
                 return;
             }
 
@@ -110,7 +110,7 @@
                 <div class="fleches">
                     <div class="fleche" id="fleche-haut" onclick="haut()"><i class="fas fa-arrow-circle-up"></i></div>
                     <div class="fleche" id="fleche-bas" onclick="bas()"><i class="fas fa-arrow-circle-down"></i></div><br>
-                    <div class="fleche" id="info">1 • 5</div>
+                    <div class="fleche" id="info">1•5</div>
                 </div>
                 <div class="slider">
                     <div class="slides">
@@ -397,7 +397,7 @@
                 font-family: 'Urbanist';
                 font-size: 21pt;
                 text-align: center;
-                background: #da7904;
+                border-bottom: 5px solid #b86630;
             }
         </style> 
     </body>
