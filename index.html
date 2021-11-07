@@ -31,6 +31,35 @@
                 }
             }
 
+            var tblImg = ["https://media.discordapp.net/attachments/629576665533513741/900737059914940456/Canal_de_l_Ourcq_a_Pantin_P1050514.png", "https://media.discordapp.net/attachments/629576665533513741/900737062372769873/cine_104.png", "https://media.discordapp.net/attachments/629576665533513741/900737058191069305/csm_Salle_Jacques_Brel__c__Fatima_Jellaoui_b91c9e8a47.png","https://media.discordapp.net/attachments/629576665533513741/900737051262079036/biggs_album_00000001061.png", "https://media.discordapp.net/attachments/629576665533513741/900737055271813170/Groupe-des-20-theatres-membres-theatre-du-fil-de-leau.png"]
+            var img = 0
+
+            function haut() {
+                img--
+                if(img == -1) {
+                    img=4
+                    document.getElementById('tblImg').src=tblImg[img]
+                    document.getElementById('info').innerHTML=(img+1) + " • 5"
+                    return;
+                }
+                document.getElementById('tblImg').src=tblImg[img]
+                document.getElementById('info').innerHTML=(img+1) + " • 5"
+                return;
+            }
+
+            function bas() {
+                img++
+                if(img == 5) {
+                    img=0
+                    document.getElementById('tblImg').src=tblImg[img]
+                    document.getElementById('info').innerHTML=(img+1) + " • 5"
+                    return;
+                }
+                document.getElementById('tblImg').src=tblImg[img]
+                document.getElementById('info').innerHTML=(img+1) + " • 5"
+                return;
+            }
+
             // let flecheH = document.getElementById("fleche-haut");
             // let flecheB = document.getElementById('fleche-bas');
             // let slider = document.querySelector(".slider");
@@ -46,7 +75,7 @@
         </script>
         <header>
             <div class="profil">
-                <img draggable="false" class="pp" src="./image_michelle.jpg">
+                <img draggable= "false" class="pp" src="./image_michelle.jpg">
                 <h1 class="michelle" href="https://app.mindmup.com/map/_free/2021/10/c1c2c03030c111ecb69dfd3cd2596c3d">Michelle</h1>
             </div>
             <div class="texte-intro">
@@ -73,22 +102,24 @@
                 Sie geht oft in das Kino 104 und spaziert oft am Kanal entlang.
             </p>
             <h3 id='orte'>Beliebte Orte</h3>
-            <!-- <section class="slider-container"> 
+            <section class="slider-container"> 
                 <div class="fleches">
-                    <div class="fleche" id="fleche-haut"><i class="fas fa-arrow-circle-up"></i></div>
-                    <div class="fleche" id="fleche-bas"><i class="fas fa-arrow-circle-down"></i></div>
+                    <div class="fleche" id="fleche-haut" onclick="haut()"><i class="fas fa-arrow-circle-up"></i></div>
+                    <div class="fleche" id="fleche-bas" onclick="bas()"><i class="fas fa-arrow-circle-down"></i></div><br>
+                    <div class="fleche" id="info">1/5</div>
                 </div>
                 <div class="slider">
                     <div class="slides">
-                        <div class="slide"><img src="https://media.discordapp.net/attachments/629576665533513741/900737059914940456/Canal_de_l_Ourcq_a_Pantin_P1050514.png" alt="Kanal" title="Kanal" id="1"></div>
+                        <img src="https://media.discordapp.net/attachments/629576665533513741/900737059914940456/Canal_de_l_Ourcq_a_Pantin_P1050514.png" alt="" id='tblImg'>
+                        <!-- <div class="slide"><img src="https://media.discordapp.net/attachments/629576665533513741/900737059914940456/Canal_de_l_Ourcq_a_Pantin_P1050514.png" alt="Kanal" title="Kanal" id="1"></div>
                         <div class="slide"><img src="https://media.discordapp.net/attachments/629576665533513741/900737062372769873/cine_104.png" alt="Kino 104" title="Kino 104" id="2"></div>
                         <div class="slide"><img src="https://media.discordapp.net/attachments/629576665533513741/900737058191069305/csm_Salle_Jacques_Brel__c__Fatima_Jellaoui_b91c9e8a47.png" alt="Salle Jacques Brel" title="Salle Jacques Brel" id="3"></div>
                         <div class="slide"><img src="https://media.discordapp.net/attachments/629576665533513741/900737051262079036/biggs_album_00000001061.png" alt="Dynamo" title="Dynamo" id="4"></div>
-                        <div class="slide"><img src="https://media.discordapp.net/attachments/629576665533513741/900737055271813170/Groupe-des-20-theatres-membres-theatre-du-fil-de-leau.png" alt="Théâtre au fil de l'eau" title="Théâtre au fil de l'eau" id="5"></div>
+                        <div class="slide"><img src="https://media.discordapp.net/attachments/629576665533513741/900737055271813170/Groupe-des-20-theatres-membres-theatre-du-fil-de-leau.png" alt="Théâtre au fil de l'eau" title="Théâtre au fil de l'eau" id="5"></div> -->
                     </div>
                 </div>
-            </section> -->
-            <section class="bulles-container">
+            </section>
+            <!-- <section class="bulles-container">
                 <div class="bulles">
                     <div class="bulle" id="1"><img src="https://media.discordapp.net/attachments/629576665533513741/900737059914940456/Canal_de_l_Ourcq_a_Pantin_P1050514.png" alt="Kanal" title="Kanal"></div>
                     <div class="bulle" id="2"><img src="https://media.discordapp.net/attachments/629576665533513741/900737062372769873/cine_104.png" alt="Kino 104" title="Kino 104"></div>
@@ -96,7 +127,7 @@
                     <div class="bulle" id="4"><img src="https://media.discordapp.net/attachments/629576665533513741/900737051262079036/biggs_album_00000001061.png" alt="Dynamo" title="Dynamo"></div>
                     <div class="bulle" id="5"><img src="https://media.discordapp.net/attachments/629576665533513741/900737055271813170/Groupe-des-20-theatres-membres-theatre-du-fil-de-leau.png" alt="Théâtre au fil de l'eau" title="Théâtre au fil de l'eau"></div>
                 </div>
-            </section>
+            </section> -->
         <!-- </div> -->
         <style>
             /* .bulles-container {
@@ -108,9 +139,8 @@
                 grid-template-columns: repeat(auto-fit, 27vw);
                 /* place-items: center; */
                 transform: translateX(7%);
+                margin-bottom: 3vh;
             }
-
-            
 
             .bulle {
                 clip-path: circle(22.4% at 32% 46%);
@@ -318,12 +348,13 @@
                 margin-bottom: 3vh;
                 gap: 1vw;
             }
-            
+            #tblImg {
+                width: calc(525*2)px; 
+                height: calc(291*2)px; 
+            }
             section.slider-container > div.slider {
-                width: 525px; 
-                height: 291px; 
-                overflow-y: scroll;
-                overflow-x: hidden;
+                /* width: 525px; 
+                height: 291px;  */
                 scroll-snap-type: y mandatory;
                 /* border-radius: 50px; */
             }
@@ -354,6 +385,9 @@
                 font-size: 30px;
                 font-family: Arial;
                 text-align: center;
+            }
+            #info {
+                font-family: "Urbanist";
             }
         </style> 
     </body>
